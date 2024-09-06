@@ -50,7 +50,7 @@ let error = ref(null)
 
 watchEffect(async () => {
     currentAddress.value = await useFetch(`/api/prisma/get-address-by-user/${user.value.id}`)
-
+    
     if (currentAddress.value.data) {
         contactName.value = currentAddress.value.data.contactName
         address.value = currentAddress.value.data.address
